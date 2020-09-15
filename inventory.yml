@@ -1,0 +1,13 @@
+---
+all:
+  children:
+    masters:
+      hosts:
+        192.168.1.223:
+    slaves:
+      hosts:
+        192.168.1.220:
+        192.168.1.228:
+        192.168.1.225:
+  vars:
+    ansible_user: pi
