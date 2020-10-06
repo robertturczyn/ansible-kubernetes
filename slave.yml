@@ -55,7 +55,10 @@
       - none
 
   - name: Disable swap
-    command: swapoff -a
+    become: yes
+    command: dphys-swapfile swapoff
+    command: dphys-swapfile uninstall
+    command: update-rc.d dphys-swapfile remove
     when: ansible_swaptotal_mb > 0
 
   - name: Add an apt signing key for Kubernetes
